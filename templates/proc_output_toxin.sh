@@ -13,6 +13,7 @@ first_line=TRUE
 for fIter in \$(ls -1 */\${model_name}.csv); do
 if [ "\${first_line}" = "TRUE" ]; then 
 cat \${fIter} > processed_data/\${model_name}.csv
+first_line=FALSE
 else 
 tail -n +2 \${fIter} >> processed_data/\${model_name}.csv
 fi
